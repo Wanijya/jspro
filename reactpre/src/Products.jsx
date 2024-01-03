@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Products = ({age, data}) => {
+    const [a, b] = useState(false);
   return (
-    <div className="w-full h-60 text-white bg-zinc-800">
-        <h1 className="p-3">{age}</h1>
-       <h1 className="p-3">{data.age}</h1>
-       <h2 className="ml-3">{data.name}</h2>
+    <div className="w-full h-60 bg-zinc-800 text-white">
+        <h4 className={`${a === false ? "text-red-600" : "text-blue-500"}`}>{a === false ? "helloo" : "heyy!!"}</h4>
+        <button onClick={()=>b(!a)} className="px-4 py-1 bg-slate-700 rounded-md m-8">Change</button>
     </div>
   );
 };
