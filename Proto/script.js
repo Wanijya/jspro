@@ -14,7 +14,7 @@ var obj = {
 }
 obj2 = Object.create(obj);
 obj2.lName = "Smith";
-console.log(obj2)
+console.log(obj2) 
 
 // __proto__ -> [[Prototype]]
 // prototype this is a different thing...
