@@ -1,33 +1,36 @@
-// Closure
-function Closure() {
-  function OutSide() {
-    var a = 1;
-    console.log("This is Function 1: " + a);
-    function Inside() {
-      var a = 2;
-      console.log("This is Function 2: " + a);
-    }
-    Inside();
-  }
-  OutSide();
+//HOF- Higher Order Functions
+//map
+function Map() {
+  let num = [10, 20, 30, 40, 50, 60];
+  let a = num.map((val) => {
+    return val + 10;
+  });
+  console.log(num);
+  console.log(a);
 }
-Closure();
+Map();
+
+//filter
+function Filter() {
+  let num = [10, 20, 30, 40, 50, 60];
+  let a = num.filter((val) => {
+    if (val >= 10 && val <= 40) {
+      return val;
+    }
+  });
+  console.log(a);
+  console.log(num);
+}
+Filter();
+
+//reduce
+function Reduce(){
+    let num = [10,20,30,40,50,60]
+    let sum = num.reduce((acc,num)=>{
+        return acc + num;
+    }, 0);
+    console.log(sum);
+}
+Reduce();
 
 
-//Error handling
-//try catch and throw
-function ErrorHandler() {
-  function d(a, b) {
-    try {
-      if (b == 0) {
-        throw new Error("Can't divide by zero");
-      } else {
-        return a / b;
-      }
-    } catch (err) {
-      console.log(err.message);
-    }
-  }
-  console.log(d(10, 0));
-}
-ErrorHandler();
