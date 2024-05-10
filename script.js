@@ -1,12 +1,11 @@
-// Closures :- 
+// event delegation:-
 
-//ek function jo return kare ek or function.
-
-function abcd(){
-    var a = 12;
-    return function(){
-        console.log(a); 
+document.querySelector("#parent");
+parent.addEventListener("click", function(details) {
+    if(details.target.id == "play"){
+        console.log("play song")
     }
-}
-var ans = abcd();
-ans();
+    else if(details.target.id == "pause"){
+        console.log("pause song")
+    }
+})
