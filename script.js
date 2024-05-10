@@ -1,12 +1,12 @@
-// Prototypal Inheritance :-
+// Closures :- 
 
-function makeHuman(name, age){
-    this.name = name;
-    this.age = age;
-}
-makeHuman.prototype.printMyName = function(){
-    console.log(this.name);
-}
+//ek function jo return kare ek or function.
 
-const human1 = new makeHuman("Wani", 21);
-const human2 = new makeHuman("Aaru", 19);
+function abcd(){
+    var a = 12;
+    return function(){
+        console.log(a); 
+    }
+}
+var ans = abcd();
+ans();
