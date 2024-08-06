@@ -1,27 +1,39 @@
-/*
-// Implicit type conversions.
-result = "2" - null;
-console.log(result);
-console.log(typeof result); 
-*/
+// Arithmetic Operator.
+// console.log(10 + 5);
+// console.log(10 - 5);
+// console.log(10 * 5);
+// console.log(10 / 5);
+// console.log(11 % 5);
+// console.log(10 ** 5); // 10 ki power 5.
 
-// Explicit type conversions.
-// result = "3";
-// result = Number(result);
-// console.log(result);
-// console.log(typeof result);
+// Inc_Dec.
+// let a = 1;
+// // a++;
+// // a--;
+// a++; // postfrics
+// ++a; // prefrics
+// console.log(a);
 
-// result = "hello";
-// result = String(result);
-// console.log(result);
-// console.log(typeof result);
+// Comparison Operators
+// a = 5;
+// b = 6;
+// console.log(a == b);
+// console.log(a != b);
+// console.log(a > b);
+// console.log(a < b);
+// console.log(a >= b);
+// console.log(a <= b);
 
-// result = -20.202;
-// result = parseInt(result);
-// console.log(result);
-// console.log(typeof result);
+// Different bettween == vs ===
+// a = "3";
+// b = 6;
+// console.log(a === b); // === data types ko bhi compaier krta hai.
+// console.log(a !== b);
 
-result = 20.001;
-result = parseFloat(result);
-console.log(result);
-console.log(typeof result);
+// Logical Operators
+// Logical OR
+// console.log(2 > 3 || 3 > 4);
+// Logical AND
+// console.log(3 > 2 && 3 < 4);
+// Logical NOT
+// console.log(!false);
