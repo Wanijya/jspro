@@ -1,39 +1,29 @@
-// Arithmetic Operator.
-// console.log(10 + 5);
-// console.log(10 - 5);
-// console.log(10 * 5);
-// console.log(10 / 5);
-// console.log(11 % 5);
-// console.log(10 ** 5); // 10 ki power 5.
+// create scene
+let scene = new THREE.Scene();
+let camera = new THREE.PerspectiveCamera(
+  75,
+  window.innerWidth / window.innerHeight,
+  .1,
+  100
+);
+camera.position.z = 5;
+scene.add(camera);
 
-// Inc_Dec.
-// let a = 1;
-// // a++;
-// // a--;
-// a++; // postfrics
-// ++a; // prefrics
-// console.log(a);
+let box = new THREE.BoxGeometry(1, 1, 1);
+let material = new THREE.MeshBasicMaterial({ color: "red" });
+let mesh = new THREE.Mesh(box, material);
 
-// Comparison Operators
-// a = 5;
-// b = 6;
-// console.log(a == b);
-// console.log(a != b);
-// console.log(a > b);
-// console.log(a < b);
-// console.log(a >= b);
-// console.log(a <= b);
+scene.add(mesh);
 
-// Different bettween == vs ===
-// a = "3";
-// b = 6;
-// console.log(a === b); // === data types ko bhi compaier krta hai.
-// console.log(a !== b);
+const canvas = document.querySelector("canvas");
+let renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.render(scene, camera);
 
-// Logical Operators
-// Logical OR
-// console.log(2 > 3 || 3 > 4);
-// Logical AND
-// console.log(3 > 2 && 3 < 4);
-// Logical NOT
-// console.log(!false);
+let clock = new THREE.Clock();
+function animate(){
+    window.requestAnimationFrame(animate);
+    renderer.render(scene, camera);
+    mesh.rotation.y = clock.getElapsedTime();
+}
+animate();
