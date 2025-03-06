@@ -1,30 +1,29 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 const App = () => {
-  const boxRef = useRef();
-  const circleRef = useRef();
+  const [xMove, setXMove] = useState(0);
+
+  const boxRef = useRef(null);
 
   useGSAP(() => {
-    gsap.to(".box", {
-      rotate: 360,
-      duration: 3,
-      delay: 1,
-      ease: "bounce.out",
-    })
-  },{scope:".container1"});
+    gsap.to(boxRef.current, {
+      x: xMove,
+      duration: 1,
+    });
+  }, [xMove]);
 
   return (
     <main>
-      <div className="container1">
-        <div className="box"></div>
-        <div className="circle"></div>
-      </div>
-      <div className="container2">
-        <div className="box"></div>
-        <div className="circle"></div>
-      </div>
+      <button
+        onClick={() => {
+          setXMove(100);
+        }}
+      >
+        Animate Box
+      </button>
+      <div ref={boxRef} className="box"></div>
     </main>
   );
 };
