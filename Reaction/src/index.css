@@ -1,0 +1,25 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body{
+  height: 100%;
+  width: 100%;
+}
+body{
+  background-color: #151414;
+}
+.box{
+  background: linear-gradient(to right bottom, crimson, rgb(203, 105, 125));
+  height: 200px;
+  width: 200px;
+  margin: 10px;
+}
+.circle{
+  background: linear-gradient(to right bottom, rgb(20, 163, 220), rgb(25, 55, 132));
+  height: 200px;
+  width: 200px;
+  margin: 10px;
+  border-radius: 50%;
+}
