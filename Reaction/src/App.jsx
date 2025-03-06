@@ -4,21 +4,27 @@ import gsap from "gsap";
 
 const App = () => {
   const [xMove, setXMove] = useState(0);
+  const [rotating, setRotating] = useState(0);
 
   const boxRef = useRef(null);
 
+  const randomX = gsap.utils.random(-500, 500, 100);
+  const randomRotate = gsap.utils.random(-360, 360, 90);
   useGSAP(() => {
     gsap.to(boxRef.current, {
       x: xMove,
-      duration: 1,
+      rotate: rotating,
+      duration: 2,
+      ease: "power2.inOut",
     });
-  }, [xMove]);
+  }, [xMove, rotating]);
 
   return (
     <main>
       <button
         onClick={() => {
-          setXMove(100);
+          setXMove(randomX);
+          setRotating(randomRotate);
         }}
       >
         Animate Box
