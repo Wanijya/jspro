@@ -5,32 +5,27 @@ import gsap from "gsap";
 const App = () => {
   const boxRef = useRef();
   const circleRef = useRef();
-  
-  const tl = gsap.timeline();
-  useGSAP(()=>{
-    tl.to(boxRef.current, {
-      x: 1000,
+
+  useGSAP(() => {
+    gsap.to(".box", {
       rotate: 360,
-      duration: 2,
+      duration: 3,
       delay: 1,
-      borderRadius: "50%",
-      ease: "bounce"
+      ease: "bounce.out",
     })
-    tl.to(circleRef.current, {
-      x: 1000,
-      rotate: 360,
-      duration: 2,
-      delay: 1,
-      borderRadius: "50px",
-      ease: "bounce"
-    })
-  })
+  },{scope:".container1"});
 
   return (
-    <div>
-      <div ref={boxRef} className="box"></div>
-      <div ref={circleRef} className="circle"></div>
-    </div>
+    <main>
+      <div className="container1">
+        <div className="box"></div>
+        <div className="circle"></div>
+      </div>
+      <div className="container2">
+        <div className="box"></div>
+        <div className="circle"></div>
+      </div>
+    </main>
   );
 };
 

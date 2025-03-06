@@ -7,19 +7,28 @@ html, body{
   height: 100%;
   width: 100%;
 }
-body{
+main{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
   background-color: #151414;
+}
+.container1, .container2{
+  border: 3px solid #fff;
+  padding: 15px;
 }
 .box{
   background: linear-gradient(to right bottom, crimson, rgb(203, 105, 125));
   height: 200px;
   width: 200px;
-  margin: 10px;
+  margin: 20px;
 }
 .circle{
   background: linear-gradient(to right bottom, rgb(20, 163, 220), rgb(25, 55, 132));
   height: 200px;
   width: 200px;
-  margin: 10px;
+  margin: 20px;
   border-radius: 50%;
 }
