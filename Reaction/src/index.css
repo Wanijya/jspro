@@ -1,38 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: a4;
+    src: url(./assets/fonts/a4.woff2);
+}
+@font-face {
+    font-family: u4;
+    src: url(./assets/fonts/u4.woff2);
+}
+@font-face {
+    font-family: u7;
+    src: url(./assets/fonts/u7.woff2);
+}
+@font-face {
+    font-family: u8;
+    src: url(./assets//fonts/u8.woff2);
+}
 *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    box-sizing: border-box;
 }
 html, body{
-  height: 100%;
-  width: 100%;
+    width: 100%;
+    height: 100%;
 }
-main{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 5vw;
-  height: 100vh;
-  width: 100%;
-  background-color: #151414;
+.parent {
+    perspective: 90px;
 }
-button{
-  padding:  20px 40px;
-  font-size: 25px;
-  font-weight: 700;
-  border-radius: 50px;
-  background: linear-gradient(to right bottom, lightgreen, green);
-  border: none;
-}
-.box{
-  height: 300px;
-  width: 300px;
-  border-radius: 20px;
-  background: linear-gradient(to right bottom, rgb(199, 60, 88), crimson);
-}
-
-button:active{
-  scale: 0.9;
+span{
+    display: inline-block;
 }

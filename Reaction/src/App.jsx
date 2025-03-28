@@ -1,36 +1,18 @@
-import React, { useRef, useState } from "react";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
+import React, { useState } from "react";
+import LoadParent from "./components/Loading/LoadParent";
+import Home from "./components/LandingPage/Home";
+import MenuPage from "./components/Menu/MenuPage";
 
 const App = () => {
-  const [xMove, setXMove] = useState(0);
-  const [rotating, setRotating] = useState(0);
 
-  const boxRef = useRef(null);
-
-  const randomX = gsap.utils.random(-500, 500, 100);
-  const randomRotate = gsap.utils.random(-360, 360, 90);
-  useGSAP(() => {
-    gsap.to(boxRef.current, {
-      x: xMove,
-      rotate: rotating,
-      duration: 2,
-      ease: "power2.inOut",
-    });
-  }, [xMove, rotating]);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <main>
-      <button
-        onClick={() => {
-          setXMove(randomX);
-          setRotating(randomRotate);
-        }}
-      >
-        Animate Box
-      </button>
-      <div ref={boxRef} className="box"></div>
-    </main>
+    <div className="h-screen bg-[#111] overflow-hidden">
+      <MenuPage menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <LoadParent />
+      <Home menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+    </div>
   );
 };
 
